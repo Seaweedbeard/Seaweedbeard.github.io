@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+:root {
+    --main-width: 90%;
+}
+
+body {
+    background-color: #121212;
+    overflow: none;
+    margin: 0;
+}
+
+.body {
+    color: white;
+    opacity: 50%;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 69px;
+    text-align: left;
+    opacity: 87%;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+}
+
+h3 {
+    font-family: "Quicksand", sans-serif;
+}
+
+.header {
+    background-color: #0c0c0c;
+    height: 7vw;
+    padding-left: 0;
+    width: 100%;
+    margin: 0%;
+    margin-left: 0;
+    animation: load 2s;
+    transition: 300ms;
+}
+
+@keyframes load {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.header h1 text {
+    animation: fall 3s;
+    font-size: 3.5vw;
+    width: 60%;
+    margin: 1.7%;
+    margin-left: 3%;
+    float: left;
+    position: absolute;
+    transition: 300ms;
+}
+
+@keyframes fall {
+    0% {
+        margin-left: 30%;
+        margin-right: -30%;
+    }
+    20% {
+        margin-left: 30%;
+        margin-right: -30%;
+    }
+    100% {
+        margin-left: 3%;
+        margin-right: -3%;
+    }
+}
+
+.btn1 {
+    animation: fal 5s;
+    background: none;
+    border: none;
+    color: #ffffff;
+    opacity: 60%;
+    font-family: "Quicksand";
+    font-size: 3vw;
+    text-align: left;
+    width: 30%;
+    float: right;
+    margin-top: 2vw;
+    position: relative;
+    transition: 300ms;
+}
+
+@keyframes fal {
+    0% {
+        opacity: 0%;
+        margin-left: 0%;
+        display: initial;
+    }
+    20% {
+        opacity: 0%;
+        margin-left: 0%;
+        display: initial;
+    }
+    100% {
+        opacity: 60%;
+        margin-left: 0%;
+        display: initial;
+    }
+}
+
+.btn1 img {
+    transform: rotate(90deg);
+    width: 5%;
+    filter: invert(100%);
+    transition: 100ms;
+}
+
+.btn1:hover {
+    cursor: pointer;
+}
+
+.btngroup {
+    margin: 0;
+}
+
+#btngroup {
+    display: none;
+    position: absolute;
+    background-image: linear-gradient(176deg, #0c0c0c 70%, #121212 calc(70% + 50px));
+    min-width: 100px;
+    width: 15vw;
+    max-width: 400px;
+    z-index: 1;
+    margin-left: 70vw;
+    transition: 100ms;
+    padding-left: 0px;
+    margin-top: 7vw;
+    font-size: 2vw;
+    overflow-y: auto;
+    max-height: 20vw;
+    border-bottom: 1px #888 solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#btngroup li {
+    list-style-type: initial;
+    list-style: initial;
+    z-index: 2;
+}
+
+#btngroup a {
+    color: white;
+    opacity: 40%;
+    padding: 1vw 1.5vw;
+    text-decoration: none;
+    display: block;
+    padding: 1vw;
+    transition: 300ms;
+    height: fit-content;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+}
+
+#btngroup a:hover {
+    background-color: #222222;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12121200;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+a>img {
+    opacity: 100%;
+}
+
+.clickme {
+    color: white;
+    opacity: 78%;
+    padding: 5px 20px;
+    border: solid white 2px;
+    width: fit-content;
+    z-index: 1;
+    transition: .4s ease-out;
+}
+
+.clickme:hover {
+    opacity: 90%;
+    cursor: pointer;
+}
+
+.cmbox {
+    background-color: #181818;
+    width: 90%;
+    height: 70vh;
+    margin: auto;
+    transition: .2s;
+}
+
+#seconds,
+#tens {
+    font-size: 2em;
+    opacity: 70%;
+}
+
+.timerbtn {
+    background: #121212;
+    color: white;
+    border: solid 1px white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 18px 10px;
+    width: 180px;
+    margin: 10px;
+    outline: none;
+    border-radius: 5px;
+}
+
+.timerbtn:hover {
+    background: #ffffffe8;
+    border: solid 1px white;
+    color: #121212;
+}
+
+#hit,
+#miss {
+    font-size: 1.9em;
+    color: white;
+    opacity: 60%;
+}

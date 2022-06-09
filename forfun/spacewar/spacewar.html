@@ -1,0 +1,36 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Spacewar! (WIP)</TITLE>
+    <link rel="stylesheet" href="spacewar.css">
+    <script src="spacewar.js"></script>
+    <meta charset="UTF-8">
+    <link id="favicon" rel="shortcut icon" type="image/png" href="../../Bilder/Icon/physicsredball1.png" />
+</HEAD>
+
+<BODY>
+    <header>
+        <h1>
+            <form class="homebtn" action="../../index.html" target="_self">
+                <button class="homebutton" type="submit">Index</button>Spacewar!</h1>
+        </form>
+    </header>
+
+    <div class="spa" id="spa">
+        <div class="turn">
+            <canvas id="myCanvas" height="500" width="500" style="border: 1px white solid;"></canvas>
+            <button id="begin" onclick="begin()">Start</button>
+            <span class="buttons" id="buttons">
+            <span class="speed" id="speed"></span>
+            <div class="controlpanel">
+                Tyngdeakselerasjon:
+                <input type="number" id="g" oninput="changevar(this.id)">
+            </div>
+            </span>
+        </div>
+
+    </div>
+</BODY>
+
+</HTML>

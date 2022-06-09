@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&family=Open+Sans+Condensed:wght@300&family=Open+Sans:wght@300&display=swap');
+:root {
+    --main-width: 90%;
+}
+
+body {
+    background-color: #121212;
+    overflow: none;
+    margin: 0;
+}
+
+.body {
+    color: white;
+    opacity: 50%;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 69px;
+    text-align: left;
+    opacity: 87%;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+    color: #FFFFFF;
+    opacity: 72%;
+    margin: 20px;
+}
+
+h3 {
+    color: #FFFFFF;
+    opacity: 58%;
+    font-size: 12px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12121200;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+table {
+    border: solid 1px white;
+    padding: 20px;
+}
+
+table td {
+    border-right: solid 1px white;
+    margin: 0px;
+    padding: 5px;
+    font-size: 22px;
+    font-family: "Open sans";
+}
+
+#button {
+    border:none;
+    background: #7e7e7e85;
+    color: rgba(255, 255, 255, 0.699);
+    padding: 24px 48px;
+    width: 200px;
+}
+
+svg {
+    border: solid 1px white;
+}

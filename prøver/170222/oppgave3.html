@@ -1,0 +1,98 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Oppgave 3</TITLE>
+    <link rel="stylesheet" href="prove.css">
+    <script>
+        let div;
+        let set = new Set(["Ost", "Syltetøy", "Brød", "Skinke", "Banan"]);
+
+        function createset() {
+            div = document.getElementById("array");
+            div.innerHTML = "";
+            for (let item of set) {
+                div.innerHTML += item + ", ";
+            }
+        }
+
+        function addtoset() {
+            let input = document.getElementById("addtoset").value;
+            set.add(input);
+            div.innerHTML = "";
+            for (let item of set) {
+                div.innerHTML += item + ", ";
+            }
+        }
+
+        function checkinset() {
+            let input = document.getElementById("checkinset").value;
+            let divcont = document.getElementById("arraycheck");
+            let contain = set.has(input);
+            if (contain == true) {
+                divcont.innerHTML = input + " finnes i settet";
+            } else if (contain == false) {
+                divcont.innerHTML = input + " finnes IKKE i settet"
+            }
+        }
+
+        function howmany() {
+            let amount = set.size;
+            document.getElementById("arraycount").innerHTML = "Det er " + amount + " matvarer i settet";
+        }
+
+        function createlist() {
+            let divlist = document.getElementById("arraylist");
+            divlist.innerHTML = "";
+            set.forEach(function(item) {
+                divlist.innerHTML += "<li>" + item + "</li>";
+            });
+        }
+
+        function createsortedlist() {
+            let divlist = document.getElementById("arraylistorganized");
+            divlist.innerHTML = "";
+            const newarray = Array.from(set);
+            newarray.sort();
+            console.log(newarray);
+            for (let i = 0; i < newarray.length; i++) {
+                divlist.innerHTML += "<li>" + newarray[i] + "</li>"
+            }
+        }
+    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY>
+    <div class="cover"></div>
+    <header>
+        <h1>
+            <form class="homebtn" action="oppgaveindex.html" target="_self">
+                <button class="homebutton" type="submit">Oppgaver</button>Oppgave 3</h1>
+        </form>
+    </header>
+
+
+    <div id="oppgave3" class="oppg">
+        Oppgave 3:<br>
+        <ol type="a">
+            <li><button onclick="createset()">Lag Array (Set)</button></li>
+            <li><input id="addtoset" value="Kaviar"><button onclick="addtoset()">Legg til i sett</button></li>
+            <li><input id="checkinset" value="Makrell i tomat"> <button onclick="checkinset()">Se etter verdi i sett</button></li>
+            <li><button onclick="howmany()">Sjekke hvor mange matvarer i settet</button></li>
+            <li><button onclick="createlist()">Lag liste av settet</button></li>
+            <li><button onclick="createsortedlist()">Lag sortert liste av settet</button></li>
+        </ol>
+        <button onclick="creatset()">Lag Array (Set)</button>
+
+        <div id="arraycheck"></div>
+        <div id="arraycount"></div>
+        <div id="array"></div>
+        <ul><span id="arraylist"></span></ul>
+        <ul><span id="arraylistorganized"></span></ul>
+    </div>
+
+</BODY>
+
+</HTML>

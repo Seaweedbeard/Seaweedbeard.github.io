@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12121200;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+body {
+    background-color: #121212;
+    margin: 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    opacity: 80%;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #FFFFFF12;
+}
+
+.homebutton {
+    margin: 20px;
+    width: fit-content;
+}
+
+.homebutton:hover {
+    background-color: #1b1b1b;
+    cursor: pointer;
+}
+
+header {
+    background-color: #0c0c0c;
+    height: 100%;
+    width: 100%;
+    padding: -150px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+    color: #FFFFFF;
+    text-align: left;
+    opacity: 87%;
+    width: 100%;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+}
+
+h3 {
+    font-family: "Quicksand", sans-serif;
+}
+
+.sitename {
+    margin-right: 13vw;
+}
+
+.slots {
+    clear: both;
+    display: grid;
+    grid-auto-flow: column;
+    /*flex-direction: row;
+    flex-basis: 20;
+    gap: 20px;
+    flex-grow: 0;
+    flex-shrink: 0;*/
+    height: 200px;
+    width: 96vw;
+    margin: auto;
+    border: 2px solid rgba(255, 255, 255, 0.699);
+    overflow-x: hidden;
+    float: left;
+}
+
+.slotmarker {
+    display: fixed;
+    z-index: 10;
+    float: right;
+    margin-left: auto;
+    height: 99%;
+    border: 1px solid red;
+    transform: translateX(calc(96vw - 400px));
+}
+
+.slots-int {
+    clear: both;
+    display: grid;
+    grid-auto-flow: column;
+    transition: 10s ease;
+}
+
+.slot {
+    display: block;
+    height: 168px;
+    width: 168px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(116, 116, 116);
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 50px;
+    padding: auto;
+    z-index: 5;
+    transition: 1s;
+    font-size: 135px;
+    text-align: center;
+    opacity: 80%;
+}
+
+.slotresult {
+    display: block;
+    clear: both;
+    font-size: 46px;
+    width: 100vw;
+    text-align: center;
+}

@@ -1,0 +1,33 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Tegning</TITLE>
+    <link rel="stylesheet" href="diagram.css">
+    <script src="diagram.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onload="draw()">
+    <header>
+        <h1>
+            <button class="homebutton" onclick="location.href='../../index.html'">Index
+            </button><span class="sitename">Tegning!</span>
+        </h1>
+    </header>
+
+    <canvas class="myCanvas" width="1000" height="600" id="myCanvas" style="background-color: white; margin-top: -20px;" onmousedown="mdown();mdraw(event)" onmouseup="mup();mdraw(event)" onmousemove="draww(event)">
+    </canvas>
+    <button class="funcbtn" onclick="move()">Fønni</button>
+    <button class="funcbtn 1" onclick="cleara()">Slett alt</button>
+    <br>
+    <input type="color" id="colorpicker" oninput="colorpick()">Pick your color</input>
+    <br>
+    <input type="number" id="linesize" oninput="linesize()">Pick your line size in pixels
+
+
+
+</BODY>
+
+</HTML>

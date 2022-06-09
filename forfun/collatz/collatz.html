@@ -1,0 +1,32 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Collatz conjecture</TITLE>
+    <link rel="stylesheet" href="collatz.css">
+    <script src="collatz.js"></script>
+    <meta charset="UTF-8">
+    <link id="favicon" rel="shortcut icon" type="image/png" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onload="CollatzIt()">
+    <header>
+        <h1>
+            <form class="homebtn" action="../../index.html" target="_self">
+                <button class="homebutton" type="submit">Index</button>Collatz conjecture</h1>
+        </form>
+    </header>
+
+    <div class="input" id="input">
+        <input type="number" id="inpnumber" placeholder="Skriv et tall">
+        <button onclick="submit()">Teste tall</button>
+        <button onclick="changeContinuing()">Teste neste tall om og om igjen</button>
+        <span id="result"></span>
+    </div>
+    <br>
+    <div class="process" id="process"></div>
+    <div class="output" id="output"></div>
+
+</BODY>
+
+</HTML>

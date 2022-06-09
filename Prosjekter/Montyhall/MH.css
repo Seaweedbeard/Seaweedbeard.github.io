@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+:root {
+    --main-width: 90%;
+}
+
+body {
+    background-color: #121212;
+    overflow: none;
+    margin: 0;
+}
+
+.body {
+    color: white;
+    opacity: 50%;
+}
+
+.homebtn {
+    width: fit-content;
+    margin-right: auto;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 69px;
+    text-align: left;
+    opacity: 87%;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+}
+
+h3 {
+    font-family: "Quicksand", sans-serif;
+}
+
+.header {
+    background-color: #0c0c0c;
+    height: 7vw;
+    padding-left: 0;
+    width: 100%;
+    margin: 0%;
+    margin-left: 0;
+    animation: load 2s;
+    transition: 300ms;
+}
+
+@keyframes load {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.header h1 text {
+    animation: fall 3s;
+    font-size: 3.5vw;
+    width: 60%;
+    margin: 1.7%;
+    margin-left: 3%;
+    float: left;
+    position: absolute;
+    transition: 300ms;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12121200;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+.doorbtn {
+    background: #121212;
+    color: white;
+    border: solid 1px white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    width: 180px;
+    height: 400px;
+    outline: none;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.doors {
+    display: flex;
+}
+
+.doorflip {
+    background-color: transparent;
+    border-radius: 5px;
+    width: 180px;
+    height: 400px;
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reveal {
+    display: none;
+}
+
+.confirmationtext {
+    color: white;
+    opacity: 70%;
+    font-family: "Quicksand", sans-serif;
+    text-align: center;
+    font-size: 24px;
+}
+
+.confirmationbtnid {
+    text-align: center;
+}
+
+.confirmationbtn {
+    border: 5px solid #0c0c0c;
+    color: white;
+    background-color: #0c0c0c;
+    padding: 10px 30px;
+    font-size: 24px;
+    transition: .2s;
+    display: none;
+}
+
+.confirmationbtn:hover {
+    cursor: pointer;
+    border: 5px solid #1f1f1f;
+    background-color: #1e1e1e;
+}

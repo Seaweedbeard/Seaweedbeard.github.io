@@ -1,0 +1,34 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Cases</TITLE>
+    <link rel="stylesheet" href="cases.css">
+    <script src="cases.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onload="createboxes(); getwidth(); wallet()">
+    <header>
+        <h1>
+            <button class="homebutton" onclick="location.href='../../index.html'">Index
+            </button><span class="sitename">Cases</span>
+        </h1>
+    </header>
+
+    <button id="animatebtn" onclick="animateit();">Start</button>
+    <button id="resetbtn" onclick="resetit();" style="display: none;">Reset</button>
+
+    <br>
+
+    <div class="slots" id="slots">
+        <div class="slotmarker"></div>
+        <div class="slots-int" id="slots-int"></div>
+    </div>
+    <div class="slotresult" id="slotresult">0</div>
+    <div class="walletdiv" id="walletdiv"><span id="name"></span>konto: <span class="wallet" id="wallet"></span></div>
+
+</BODY>
+
+</HTML>

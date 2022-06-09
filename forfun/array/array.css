@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12121200;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+body {
+    background-color: #121212;
+    overflow: none;
+    margin: 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    opacity: 80%;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #FFFFFF12;
+}
+
+.homebutton {
+    margin: 20px;
+    width: fit-content;
+}
+
+.homebutton:hover {
+    background-color: #1b1b1b;
+    cursor: pointer;
+}
+
+header {
+    background-color: #0c0c0c;
+    height: 100%;
+    width: 100%;
+    padding: -150px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+    color: #FFFFFF;
+    text-align: left;
+    opacity: 87%;
+    width: 100%;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+}
+
+h3 {
+    font-family: "Quicksand", sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 9vw);
+    width: fit-content;
+    float: left;
+    margin-left: 12vw;
+}
+
+.gridbox {
+    border: 1px solid white;
+    height: 9vw;
+    width: 9vw;
+    font-size: 7vw;
+    text-align: center;
+    transition: 100ms;
+}
+
+.gridbox:hover {
+    background-color: #ffffff1e;
+    cursor: pointer;
+}
+
+.log {
+    float: left;
+    display: inline;
+    width: auto;
+    margin-left: 15vw;
+    font-size: 1.6vw;
+}
+
+.log>ol {
+    border: 1px solid white;
+    padding-right: 1vw;
+}
+
+#reset {
+    width: 27vw;
+    height: 27vw;
+    margin-top: -27vw;
+    border: none;
+    font-size: 8vw;
+    color: rgb(35, 0, 80);
+    opacity: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.568);
+}
+
+.turn {
+    float: left;
+    margin-left: 8vw;
+}
+
+#XOturn {
+    position: absolute;
+    font-size: 20vw;
+    width: 13vw;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+#winner {
+    font-size: 7vw;
+    margin-left: 7vw;
+}
+
+.tictactoe {
+    display: block;
+}
+
+.choosegame {
+    font-size: 40px;
+}
+
+.choosegame:hover {
+    animation: shake .4s;
+}
+
+.choosegame:focus {
+    animation: spin .8s;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotatez(0deg);
+    }
+    20% {
+        transform: rotatez(-10deg);
+    }
+    75% {
+        transform: rotateZ(370deg);
+    }
+    100% {
+        transform: rotatez(360deg);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+    }
+    40% {
+        transform: rotateZ(-10deg);
+    }
+    60% {
+        transform: rotateZ(5deg);
+    }
+    80% {
+        transform: rotateZ(-5deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+
+.sitename {
+    margin-right: 13vw;
+}
+
+.info {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    font-size: 5vw;
+}
+
+.hmletter {
+    border-bottom: 2px solid white;
+    width: 4vw;
+    height: 4vw;
+    float: left;
+    margin-right: 1vw;
+    text-align: center;
+    font-size: 3vw;
+}
+
+.hminput {
+    background-color: #383838;
+    border: none;
+    text-align: center;
+    width: 20vw;
+    height: 4vw;
+    font-size: 1.19vw;
+}
+
+.hminput:active {
+    border: none;
+}
+
+.hmhealth {
+    text-align: center;
+}
+
+#Let {
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+#Med {
+    background-color: rgba(255, 255, 0, 0.2);
+}
+
+#Van {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.clicker {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+.clickerbutton {
+    height: 35vw;
+    width: 35vw;
+    max-height: 100vh;
+    border-radius: 100%;
+    transition: .2s;
+    font-size: 3vw;
+}
+
+.clickerbutton:active {
+    background-color: rgba(0, 0, 0, 0.219);
+    animation: bulge .2s;
+}
+
+@keyframes bulge {
+    10% {
+        transform: scale(98%);
+    }
+    40% {
+        transform: scale(102%);
+    }
+}
+
+.crclickerbutton {
+    float: left;
+    margin-left: 5vw;
+}
+
+.crshop {
+    float: right;
+    margin-right: 3vw;
+}
+
+.crshoptitle {
+    font-size: 4vw;
+}
+
+.crshopcontent {
+    font-size: 1.2vw;
+    border: 1px solid rgba(255, 255, 255, 0.123);
+    padding: .4vw;
+    overflow-y: auto;
+    max-height: 27vw;
+}
+
+.crshopcontent .crshopthing {
+    transition: .3s;
+}
+
+.crshopcontent button {
+    font-size: 1.6vw;
+    cursor: not-allowed;
+}
+
+.crshopthing {
+    padding-bottom: .3vw;
+    padding-top: .5vw;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.356);
+    opacity: 20%;
+}
+
+.crbought {
+    float: right;
+    margin-right: 3vw;
+}

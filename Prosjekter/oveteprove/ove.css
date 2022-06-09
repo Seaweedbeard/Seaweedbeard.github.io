@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12121200;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+body {
+    background-color: #121212;
+    overflow: none;
+    margin: 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    opacity: 80%;
+    margin-right: -6px;
+}
+
+input:hover {
+    background-color: #FFFFFF12
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    opacity: 80%;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #FFFFFF12;
+}
+
+.homebutton {
+    margin: 20px;
+    width: fit-content;
+}
+
+.homebutton:hover {
+    background-color: #1b1b1b;
+    cursor: pointer;
+}
+
+header {
+    background-color: #0c0c0c;
+    height: 100%;
+    width: 100%;
+    padding: -150px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+    color: #FFFFFF;
+    text-align: left;
+    opacity: 87%;
+    width: 100%;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+}
+
+h3 {
+    font-family: "Quicksand", sans-serif;
+}
+
+.oppg {
+    border: 1px solid white;
+    width: fit-content;
+    float: left;
+    /*min-height: 150px;*/
+    height: 210px;
+    overflow: scroll;
+    max-width: fit-content;
+}
+
+#oppgave1 {
+    width: 850px;
+}
+
+#oppgave2 {
+    width: 405px;
+}
+
+#oppgave3 {
+    height: fit-content;
+    width: 447px;
+}
+
+#oppgave4 {
+    width: 326px;
+}
+
+#oppgave5 {
+    height: fit-content;
+    width: 447px;
+}
+
+.animaterect {
+    overflow: hidden;
+    float: left;
+}
+
+.animaterect1 {
+    animation: slide 5s infinite linear;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
+    float: left;
+}
+
+.animaterect2 {
+    animation: slide 5s infinite ease;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(0, 0, 255);
+    background-color: rgb(0, 0, 255);
+    float: right;
+}
+
+.animaterect3 {
+    animation: slide 5s infinite ease-in;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(0, 255, 0);
+    background-color: rgb(0, 255, 0);
+    float: right;
+}
+
+.animaterect4 {
+    animation: slide 5s infinite ease-out;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(70, 11, 97);
+    background-color: rgb(70, 11, 97);
+    float: left;
+}
+
+@keyframes slide {
+    0% {
+        margin-top: 0%;
+    }
+    50% {
+        margin-top: 148px;
+    }
+}
+
+.animaterecta {
+    float: left;
+}
+
+.animaterect5 {
+    animation: glide 60s infinite linear;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 0, 0);
+    float: left;
+}
+
+@keyframes glide {
+    0% {
+        margin: 0px;
+    }
+    25% {
+        margin-top: 150px;
+        margin-left: 0px;
+    }
+    50% {
+        margin-top: 150px;
+        margin-left: 150px;
+    }
+    75% {
+        margin-left: 150px;
+        margin-top: 0px;
+    }
+}

@@ -1,0 +1,96 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Oppgave 4</TITLE>
+    <link rel="stylesheet" href="prove.css">
+    <script>
+        let map = new Map();
+
+        function createfreshmap() {
+            document.getElementById("map").innerHTML = map;
+        }
+
+        function createmap() {
+            let div = document.getElementById("div");
+            div.innerHTML = "";
+
+            map.set(1, ["Ost", 50]);
+            map.set(2, ["Syltetøy", 30]);
+            map.set(3, ["Brød", 20]);
+            map.set(4, ["Banan", 5]);
+            map.set(5, ["Skinke", 25]);
+            for (let key of map) {
+                div.innerHTML += '<li>Navn: ' + key[1][0] + ', Pris: ' + key[1][1] + '</li>'
+            }
+        }
+
+        function checkmap() {
+            let divcheck = document.getElementById("divcheck");
+            let div = document.getElementById("div");
+
+            let check = map.has(3);
+            if (check == true) {
+                divcheck.innerHTML = "Map har en verdi med nøkkel 3. Den var " + map.get(3)[0] + ", med pris: " +
+                    map.get(3)[1] + ".";
+                map.get(3)[0] = "HaPå";
+                divcheck.innerHTML += "<br>Men nå heter den " + map.get(3)[0];
+                div.innerHTML = "";
+                for (let key of map) {
+                    div.innerHTML += '<li>Navn: ' + key[1][0] + ', Pris: ' + key[1][1] + '</li>'
+                }
+            } else if (check == false) {
+                div.innerHTML = "Map har ingen verdi med nøkkel 3";
+            }
+        }
+
+        function createbuttons() {
+            let div = document.getElementById("buttons");
+            div.innerHTML = "";
+            for (let i = 1; i <= map.size; i++) {
+                div.innerHTML += "<button id='" + i + "' onclick='showinfo(this.id)'>" + map.get(i)[0] + "</button>";
+            }
+        }
+
+        function showinfo(clicked_id) {
+            let id = Number(clicked_id);
+            let div = document.getElementById("info");
+            div.innerHTML = "Varen heter " + map.get(id)[0] + " og har en pris på " + map.get(id)[1] + "Kr";
+
+        }
+    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onload="createfreshmap()">
+    <div class="cover"></div>
+    <header>
+        <h1>
+            <form class="homebtn" action="oppgaveindex.html" target="_self">
+                <button class="homebutton" type="submit">Oppgaver</button>Oppgave 4</h1>
+        </form>
+    </header>
+
+
+    <div id="oppgave4" class="oppg">
+        Oppgave 4:<br>
+        <ol type="a">
+            <li>Map er tomt, men definert som <span id="map"></span></li>
+            <li><button onclick="createmap()">Lag et map</button></li>
+            <li><button onclick="checkmap()">Se etter 3 i map</button></li>
+            <li><button onclick="createbuttons()">Lag knapper for hver matvare</button></li>
+
+            <div id="buttons"></div>
+            <div id="info"></div>
+            <br>
+            <ol>
+                <div id="div"></div>
+            </ol>
+            <div id="divcheck"></div>
+        </ol>
+    </div>
+
+</BODY>
+
+</HTML>

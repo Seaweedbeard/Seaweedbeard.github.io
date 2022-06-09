@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+:root {
+    --main-width: 90%;
+}
+
+body {
+    background-color: #121212;
+    overflow: none;
+    margin: 0;
+}
+
+.homebtn {
+    width: fit-content;
+    margin-right: auto;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 69px;
+    text-align: left;
+    opacity: 87%;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: rgb(206, 0, 161);
+    border: 1px solid rgb(211, 71, 94);
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+    font-size: 7.6vh;
+    color: rgba(255, 255, 255, 0.788);
+    padding-right: 4.6vw;
+    padding-left: 4.6vw;
+    border-radius: 1vh;
+    margin-left:35vw;
+    margin-right:auto;
+    float: center;
+    margin-top:24vh;
+    margin-bottom:auto;
+    transition: 1s;
+
+}
+button:hover {
+    cursor: pointer;
+    background-color: rgb(228, 0, 178);
+    padding-left: 82px;
+    padding-right: 82px;
+    padding-top: 72px;
+    padding-bottom: 72px;
+    font-size: 72px;
+    margin-left: 31%;
+    margin-top: 18vh;
+    color: rgba(255, 255, 255, 0.925);
+}

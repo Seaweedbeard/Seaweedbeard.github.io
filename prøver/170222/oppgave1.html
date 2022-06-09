@@ -1,0 +1,81 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Oppgave 1</TITLE>
+    <link rel="stylesheet" href="prove.css">
+    <script>
+        let array = [];
+        let div;
+
+        function createarray() {
+            div = document.getElementById("array");
+            array = ["Ost", "Syltetøy", "Brød", "Skinke", "Banan"];
+            div.innerHTML = array;
+        }
+
+        function deletefromarray() {
+            let pos = array.length - 1;
+            array.splice(pos, 1);
+            div.innerHTML = array;
+        }
+
+
+        function deletefromarraynum4() {
+            array.splice(3, 1);
+            div.innerHTML = array;
+        }
+
+        function add3items() {
+            array.push("Majones", "Ketchup", "Pølse");
+            div.innerHTML = array;
+        }
+
+        function sortalphabetically() {
+            array.sort();
+            div.innerHTML = array;
+        }
+
+        function howmany() {
+            let ndiv = document.getElementById("telling");
+            ndiv.innerHTML = "Arrayet består av " + array.length + " matvarer";
+        }
+
+        function addarray() {
+            let input = document.getElementById("addarray").value;
+            array.push(input);
+            div.innerHTML = array;
+        }
+    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY>
+    <div class="cover"></div>
+    <header>
+        <h1>
+            <form class="homebtn" action="oppgaveindex.html" target="_self">
+                <button class="homebutton" type="submit">Oppgaver</button>Oppgave1</h1>
+        </form>
+    </header>
+
+    <div id="oppgave1" class="oppg">
+        Oppgave 1:<br>
+        <ol type="a">
+            <input id="addarray"> <button onclick="addarray()">Legg til i lista</button><br>
+            <li><button onclick="createarray()">Lag Array</button></li>
+            <li><button onclick="deletefromarray()">Slett den siste tingen</button></li>
+            <li><button onclick="deletefromarraynum4()">Slett den fjerde tingen</button></li>
+            <li><button onclick="add3items()">Legg til tre matvarer</button></li>
+            <li><button onclick="howmany()">Vis antall matvarer i array</button></li>
+            <li><button onclick="sortalphabetically()">Sorter alfabetisk</button></li>
+        </ol>
+        <br>
+        <span id="array"></span><br>
+        <span id="telling"></span>
+    </div>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,96 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Oppgave 2</TITLE>
+    <link rel="stylesheet" href="prove.css">
+    <script>
+        let array = [];
+        let div;
+        let divpris;
+
+        function createarray() {
+            array = [{
+                navn: "Ost",
+                pris: 50
+            }, {
+                navn: "Syltetøy",
+                pris: 30
+            }, {
+                navn: "Brød",
+                pris: 20
+            }, {
+                navn: "Skinke",
+                pris: 25
+            }, {
+                navn: "Banan",
+                pris: 5
+            }];
+            div = document.getElementById("array");
+            for (let i = 0; i <= array.length; i++) {
+                div.innerHTML += array[i].navn + " koster " + array[i].pris + "kr, ";
+            }
+        }
+
+        function sortarray() {
+            div.innerHTML = "";
+            array.sort((a, b) => a.pris - b.pris)
+            for (let i = 0; i <= array.length; i++) {
+                div.innerHTML += array[i].navn + " koster " + array[i].pris + "kr, ";
+            }
+        }
+
+        function findprice() {
+            let num = 0;
+            for (let x in array) {
+                num = num + array[x].pris;
+            }
+            document.getElementById("pris").innerHTML = "Sammenlagt pris av alle matvarer er " + num;
+        }
+
+        function moms() {
+            div.innerHTML = "";
+            for (let i = 0; i <= array.length; i++) {
+                array[i].pris = array[i].pris * 1.25;
+                div.innerHTML += array[i].navn + " koster " + array[i].pris + "kr, ";
+            }
+        }
+
+        function table() {
+            let table = document.getElementById("arraytable");
+            table.innerHTML = "<tr><th>Navn</th><th>Pris</th></tr>";
+            for (var i of array) {
+                table.innerHTML += "<td>" + i.navn + "</td><td>" + i.pris + "</td>";
+            }
+        }
+    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY>
+    <div class="cover"></div>
+    <header>
+        <h1>
+            <form class="homebtn" action="oppgaveindex.html" target="_self">
+                <button class="homebutton" type="submit">Oppgaver</button>Oppgave 2</h1>
+        </form>
+    </header>
+
+    <div id="oppgave2" class="oppg">
+        Oppgave 2:<br>
+        <ol type="a">
+            <li><button onclick="createarray()">Lag Array</button></li>
+            <li><button onclick="sortarray()">Sorter etter pris</button></li>
+            <li><button onclick="findprice()">Finn pris til sammen</button></li>
+            <li><button onclick="moms()">Legg til moms</button></li>
+            <li><button onclick="table()">Lag tabell</button></li>
+        </ol>
+        <br>
+        <span id="array"></span><br>
+        <span id="pris"></span>
+        <table id="arraytable"></table>
+    </div>
+</BODY>
+
+</HTML>

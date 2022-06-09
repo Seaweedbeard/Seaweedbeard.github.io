@@ -1,0 +1,46 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Frogger</TITLE>
+    <link rel="stylesheet" href="frogger.css">
+    <script src="frogger.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onload="startfrogger(); adaptSpeed(); createdetails(); createenemies(); createwaterstuff();
+    moveenemies(); starttimer();">
+    <div class="cover"></div>
+    <header>
+        <h1>
+            <button class="homebutton" onclick="location.href='../../index.html'">Index</button>
+            <span class="sitename">Frogger</span>
+        </h1>
+    </header>
+
+
+    <div class="Liv">
+        <span id="health">
+            <img src='../../Bilder/Sprite/Frog/frog.png' width='35px' class="froggerimg">
+            <img src='../../Bilder/Sprite/Frog/frog.png' width='35px' class="froggerimg">
+            <img src='../../Bilder/Sprite/Frog/frog.png' width='35px' class="froggerimg">
+        </span>
+    </div>
+    <div class="gamearea">
+        <div class="Tid"><span id="time">&nbsp</span></div>
+        <div class="spaceinvaderscont" id="spaceinvaderscont">
+            <canvas id="spacecanvas" height="600" width="600"></canvas>
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="Poeng">Poeng <span id="points">0</span></div>
+        <div class="HøyPoeng">High Score <span id="highscore">0</span></div>
+        <span class="reset"><button onclick="gridt()">Grid</button></span>
+        <span class="reset"><button onclick="reset()">Reset</button></span>
+    </div>
+
+</BODY>
+
+</HTML>

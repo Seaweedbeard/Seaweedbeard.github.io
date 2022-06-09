@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Reaction test</TITLE>
+    <link rel="stylesheet" href="reaction.css">
+    <script src="reaction.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+I made mistakes, but fix it all up, and this shoudl be good. It's not an accuracy text like I'm kinda makign, 
+I want a simple reaction. When it turns a color, you need to click it as fast as possible and see 
+if you get a better time
+
+<BODY>
+    <div style="height:5vh">
+        <a href="index.html">
+            <h2>Index</h2>
+        </a>
+    </div>
+    <p><span id="seconds" style="color:white">00</span><span style="color:white">:</span><span id="tens" style="color:white">00</span></p>
+    <p><span id="hit">0</span> <span id="miss">0</span></p>
+    <button class="timerbtn" id="button-start">Start</button>
+    <button class="timerbtn" id="button-stop">Stop</button>
+    <button class="timerbtn" id="button-reset">Reset</button>
+    <div class="cmbox" id="missme" onclick="missme()">
+        <div class="clickme" id="hitme" onclick="clickme()">
+            <h3>Click me</h3>
+        </div>
+    </div>
+</BODY>
+
+</HTML>

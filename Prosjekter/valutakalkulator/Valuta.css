@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&family=Open+Sans+Condensed:wght@300&family=Open+Sans:wght@300&display=swap');
+:root {
+    --main-width: 90%;
+}
+
+body {
+    background-color: #121212;
+    overflow: none;
+    margin: 0;
+    text-align: center;
+}
+
+.body {
+    color: white;
+    opacity: 50%;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 69px;
+    text-align: left;
+    opacity: 87%;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+    color: #FFFFFF;
+    opacity: 72%;
+    margin: 20px;
+}
+
+h3 {
+    color: #FFFFFF;
+    opacity: 58%;
+    font-size: 12px;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12121200;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: none;
+    display: inline-block;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+svg {
+    padding: none;
+}
+
+.flags {
+    width: fit-content;
+    margin: auto;
+}
+
+.from {
+    width: fit-content;
+    border: 1px solid white;
+    float: left;
+}
+
+.to {
+    width: fit-content;
+    border: 1px solid gray;
+    float: left;
+}
+
+.homebtn {
+    background-color: #ffffffa4;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.homebtn a {
+    padding: 10px;
+}
+
+.homebtn:hover {
+    background-color: #ffffffb4;
+}
+
+.bottomtext {
+    float: left;
+    margin: auto;
+}
+
+#field1res {
+    font-size: 36px;
+}
+
+#field2 {
+    font-size: 36px;
+}

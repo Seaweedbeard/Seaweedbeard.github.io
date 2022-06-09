@@ -1,0 +1,84 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Øve til prøve</TITLE>
+    <link rel="stylesheet" href="ove.css">
+    <script src="ove.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onload="width()">
+    <div class="cover"></div>
+    <header>
+        <h1>
+            <form class="homebtn" action="../prosjekt.html" target="_self">
+                <button class="homebutton" type="submit">Prosjekter</button>Øve til prøve</h1>
+        </form>
+    </header>
+
+    <div id="oppgave1" class="oppg">
+        Oppgave 1:<br>
+        <input id="addarray"> <button onclick="addarray()">Legg til i lista</button><br>
+        <button onclick="createarray()">Lag Array</button>
+        <button onclick="getthird()">Alert tredje ting</button>
+        <button onclick="deletefromarray()">Slett den andre tingen</button>
+        <button onclick="sortalphabetically()">Sorter alfabetisk</button>
+        <button onclick="mayo()">Se etter majones</button>
+        <br>
+        <span id="array"></span>
+        <span id="majones"></span>
+    </div>
+
+    <div id="oppgave2" class="oppg">
+        Oppgave 2:<br>
+        <button onclick="createarray2()">Lag Array</button>
+        <button onclick="moms()">Legg til moms</button>
+        <button onclick="table()">Lag tabell</button>
+        <br>
+        <span id="array2"></span>
+        <table id="array2table">
+            <tr>
+                <th>Navn</th>
+                <th>Pris</th>
+            </tr>
+        </table>
+    </div>
+    <div id="oppgave3" class="oppg">
+        Oppgave 3:<br>
+        <input id="addtoset"> <button onclick="addtoset()">Legg til i sett</button><br>
+        <input id="deletefromset"> <button onclick="deletefromset()">Slett fra sett</button><br>
+        <input id="checkinset"> <button onclick="checkinset()">Se etter verdi i sett</button><br>
+        <button onclick="createarray3()">Lag Array (Set)</button>
+        <button onclick="createlist3()">Lag Liste av Settet</button><br>
+        <span id="array3cont"></span>
+        <span id="array3"></span>
+        <ul><span id="array3list"></span></ul>
+    </div>
+    <div id="oppgave4" class="oppg">
+        Oppgave 4:<br>
+        <button onclick="createmap()">Lag et map</button>
+        <button onclick="checkmap()">Se etter 2 i map</button><br>
+        <span id="div4"></span><br>
+        <span id="div4check"></span>
+    </div>
+    <div id="oppgave5" class="oppg">
+        Oppgave 5:<br>
+        <div class="animaterect" id="animaterect" style="width: 208px; 
+        height: 200px; border: 1px solid white;">
+            <div class="animaterect1" id="animaterect1">1</div>
+            <div class="animaterect2" id="animaterect2">2</div>
+            <div class="animaterect3" id="animaterect3">3</div>
+            <div class="animaterect4" id="animaterect4">4</div>
+        </div>
+        <div class="animaterecta" id="animaterect" style="width: 200px; 
+        height: 200px; border: 1px solid white;">
+            <div class="animaterect5" id="animaterect1"></div>
+        </div>
+        <!--<canvas id="myCanvas" width="200px" height="200px" style="border: 1px solid white;"></canvas>-->
+    </div>
+
+</BODY>
+
+</HTML>

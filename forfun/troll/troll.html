@@ -1,0 +1,35 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>.html.css.js.php.json</TITLE>
+    <link rel="stylesheet" href="troll.css">
+    <script src="troll.js"></script>
+    <meta charset="UTF-8">
+    <link id="favicon" rel="shortcut icon" type="image/png" href="icons/Seaweedbeard.png" />
+</HEAD>
+
+<BODY>
+    <header>
+        <h1>
+            <form class="homebtn" action="../../index.html" target="_self">
+                <button class="homebutton" type="submit">Index</button>Lag en fin overskrift</h1>
+        </form>
+    </header>
+
+    <div class="all">
+        <input id="titleinput" oninput="document.title=document.getElementById('titleinput').value">
+        <div class="pictures">
+            Hvilket ikon skal vinduet ha?
+            <br>
+            <button id="ph" onclick="changeicon(this.id)">Pornhub</button>
+            <button id="yt" onclick="changeicon(this.id)">Youtube</button>
+            <button id="sw" onclick="changeicon(this.id)">Seaweedbeard</button>
+            <button id="bt" onclick="changeicon(this.id)">Bat Sprite</button>
+            <br><br>
+            <button onclick="document.body.innerHTML = ''; document.body.style.backgroundColor = 'white'">CLEAR WINDOW TO BLANK</button>
+        </div>
+    </div>
+</BODY>
+
+</HTML>

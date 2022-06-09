@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12121200;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+body {
+    background-color: #121212;
+    overflow: none;
+    margin: 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    opacity: 80%;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #FFFFFF12;
+}
+
+.homebutton {
+    margin: 20px;
+    width: fit-content;
+}
+
+.homebutton:hover {
+    background-color: #1b1b1b;
+    cursor: pointer;
+}
+
+header {
+    background-color: #0c0c0c;
+    height: 50%;
+    width: 100%;
+    padding: -150px;
+    float: right;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+    color: #FFFFFF;
+    text-align: left;
+    opacity: 87%;
+    width: 100%;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+}
+
+h3 {
+    font-family: "Quicksand", sans-serif;
+}
+
+.sitename {
+    font-family: "Quicksand", sans-serif;
+    font-size: 38px;
+    color: #00FF00;
+    text-align: right;
+    width: 100%;
+    text-shadow: pink -2px 1px, yellow -2px 3px;
+}
+
+.gamearea {
+    transform: scale(1);
+}
+
+.froggerimg {
+    transform: scale(1);
+}
+
+#spacecanvas {
+    background-color: #073385;
+    border: 5px solid #086300;
+    border-radius: 10px;
+    box-shadow: #053600 0px 0px 100px;
+}
+
+.info {
+    float: left;
+    margin-right: 1vw;
+}
+
+.turn {
+    float: left;
+    margin-left: 1vw;
+}
+
+.spaceinvaderscont {
+    position: fixed;
+    z-index: 2;
+    margin-top: 40px;
+    margin-left: 300px;
+}
+
+.score {
+    float: left;
+    margin-right: 1vw;
+}
+
+.reset {
+    float: left;
+    margin-right: 1vw;
+}
+
+#time {
+    color: black;
+    background-color: #00FF00;
+    width: 1px;
+    height: 20px;
+    display: inline-block;
+    transition: 1s linear;
+    border-radius: 2px;
+}
+
+.Tid {
+    position: fixed;
+    z-index: 2;
+    margin-top: 15px;
+    margin-left: 300px
+}
+
+.Liv {
+    position: fixed;
+    z-index: 2;
+    margin-top: 5px;
+    margin-left: 595px;
+    font-size: 38px;
+}

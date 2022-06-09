@@ -1,0 +1,107 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Eightball</TITLE>
+    <link rel="stylesheet" href="eightball.css">
+    <script src="eightball.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onload="load()">
+    <div class="cover"></div>
+    <header>
+        <h1>
+            <form class="homebtn" action="../../index.html" target="_self">
+                <button class="homebutton" type="submit">Index</button>Lag en array og trekk tilfeldige verdier</h1>
+        </form>
+    </header>
+
+    <div class="all">
+        <div class="left">
+            <form name="form1" action="#" autocomplete="off">
+                <input type="text" id="input" placeholder="S k r i v   s t r e n g   h e r" style="width:220px;">
+                <input type="submit" action="#" onclick="addinput()" value="Legg til streng" style="width:140px;">
+            </form>
+            <br>
+            <button onclick="eightball()">Magic 8ball</button>
+            <button onclick="terning()">Terning</button>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <form name="form2" action="#" autocomplete="off">
+                <input type="text" id="inputs" placeholder="S l e t t   s t r e n g   h e r" style="width:220px;">
+                <input type="submit" action="#" onclick="removestrings()" value="Fjern streng" style="width:140px;">
+            </form>
+            <br>
+            <button onclick="resetarray()">Fjern arrayen</button>
+            <button onclick="removequestion()">Fjern spørsmål</button>
+            <br>
+            <br>
+            <button onclick="removestring()">Fjern ordet på midten</button>
+            <br>
+            <br>
+            <button onclick="bigundo()">Tilbakestill alt</button>
+        </div>
+
+        <div class="middle">
+            <button onclick="randomstring()">Velg tilfeldig streng fra arrayen</button>
+            <br>
+            <br>
+            <form name="form3" action="#" autocomplete="off">
+                <input type="text" id="qinput" placeholder="S p ø r   h e r">
+                <input type="submit" action="#" onclick="question()" value="Spør">
+            </form>
+            <p id="question" class="question">
+                <p id="randomstring" class="randomstring">
+        </div>
+
+    <div class="right" id="right">
+        <div class="tooltip">
+            <span class="tooltiptext">Endre fargetemaet på nettsiden</span>
+            Vil du benytte lysmodus?
+        </div>
+            <br>
+            Ja
+                <label class="switch">
+                    <input type="checkbox" checked onclick="darkmode()" id="darkmode">
+                    <span class="slider round"></span>
+                </label>
+            Nei
+        <br>
+        <div class="tooltip">
+            <span class="tooltiptext">Strenger blir slettet etter bruk</span>
+            Vil du ha med trekk?
+        </div>
+        <br>
+            Ja
+                <label class="switch">
+                    <input type="checkbox" checked onclick="checkbox()" id="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            Nei
+        <br>
+        <div class="tooltip">
+            <span class="tooltiptext">Brukes for å se alle verdiene i arrayen</span>
+            Vil du se alle strengene?
+        </div>
+            <br>
+            Ja
+                <label class="switch">
+                    <input type="checkbox" checked onclick="showstrings()" id="showstrings">
+                    <span class="slider round"></span>
+                </label>
+            Nei
+        <br>
+            <p id="currentstrings">
+                Nåværende strenger:
+                <br>
+                <p id="showhere">
+                </p>
+            </p>
+    </div>
+</BODY>
+
+</HTML>

@@ -1,0 +1,34 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Space Duel</TITLE>
+    <link rel="stylesheet" href="spillv2.css">
+    <script src="spillv2.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onload="startspaceinvaders(); moveenemies(); nono()">
+    <div class="cover"></div>
+    <header>
+        <h1>
+            <button class="homebutton" onclick="location.href='../../index.html'">Index</button>
+            <span class="sitename">Space Duel</span>
+        </h1>
+    </header>
+
+    <div class="spa" id="spa">
+        <div class="turn">
+            <div class="spaceinvaderscont" id="spaceinvaderscont">
+                <canvas id="spacecanvas" height="300" width="500" style="border: 1px white solid;"></canvas>
+            </div>
+            <span class="reset"><button onclick="reset()">Reset</button></span>
+            <span class="points"></span>
+        </div>
+
+    </div>
+
+</BODY>
+
+</HTML>

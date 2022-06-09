@@ -1,0 +1,96 @@
+<head>
+    <title>Oslo!!!</title>
+    <script>
+        
+        let rate;
+        function matte(clicked_id) {
+            
+            let id = clicked_id;
+            let tall1 = document.getElementById("input").value;
+            let transport;
+            let text;
+            let bensinpris = document.getElementById("bens").value;
+            let bensinforbruk = document.getElementById("bensf").value;
+            let fly = Number(document.getElementById("flypris").value);
+            let kurs = document.getElementById("nokgbp").value;
+            let personer = document.getElementById("ppl").value;
+            let tur;
+            //const rate = document.querySelector('#rate');
+
+            if (document.getElementById("tur").checked == true) {
+                tur = 2;
+            } else {
+                tur = 1;
+            }
+
+            if (id == "bil") {
+                transport = bensinpris * bensinforbruk * tur / personer;
+                text = "Hvis du kjører bil med bensinpris lik " + bensinpris + "kr/l og med " 
+                + personer + " betalende personer i bilen koster hele turen med hus lik: "
+            } else if (id == "fly") {
+                transport = fly;
+                text = "Hvis du tar fly med billett pris " 
+                + transport + "kr koster hele turen med hus, uten transport til og fra flyplassene, lik: "
+            }
+
+            sum = (tall1 * kurs / personer + transport).toFixed(0);
+
+            document.getElementById("output").innerHTML = text + "<br><div class='sum'>" + sum + "kr</div>";
+        }
+
+        function setup() {
+            let x = new Date();
+            let day = x.getDate();
+            let oldday = localStorage.getItem("date");
+            if(oldday == day) {
+                rate = localStorage.getItem("rate");
+                document.getElementById("nokgbp").value = rate;
+                console.log("NOT used api request");
+            } else {
+                localStorage.setItem("date", day);
+                fetch(`https://v6.exchangerate-api.com/v6/c418bba4b9fedf5f1d36c502/latest/GBP`)
+                .then(resa => resa.json())
+                .then(resa => {
+                    const new_rate = resa.conversion_rates["NOK"];
+                    document.getElementById("nokgbp").value = new_rate.toFixed(2);
+                    rate = new_rate.toFixed(2);
+                    localStorage.setItem("rate", rate);
+                })
+                console.log("used api request");
+            }
+        }
+    </script>
+    <style>
+        .specific {
+            border: 1px solid black;
+            width: fit-content;
+            padding: 5px;
+            margin: 10px 0px 10px 0px;
+        }
+        
+        .sum {
+            font-size: 2.7vw;
+            border-bottom: 4px double black;
+            width: fit-content;
+            padding: 0 20px 0 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="setup()">
+    <input type="number" id="nokgbp" placeholder="Britiske pund kurs"> Britiske pund kurs i forhold til norske kroner<br>
+    <input type="number" id="ppl" placeholder="Antall personer" value=4> Antall Personer<br>
+    <div class="specific"><b>Disse er spesifikke til biltur</b><br>
+        <input type="number" id="bens" placeholder="Bensinpris" value=20> Bensinpris<br>
+        <input type="number" id="bensf" placeholder="Bensinforbruk" value=40> Hvor mange liter bensin bruker en bil på distansen<br>
+        <input type="checkbox" id="tur" placeholder="turretur" checked> Tur-retur?<br>
+    </div>
+    <div class="specific"><b>Denne er spesifikt for fly</b><br>
+        <input type="number" id="flypris" placeholder="Flybillett" value=600> Flybillettpris per person
+    </div>
+    <input type="number" id="input" autocomplete="off" placeholder="airBNB pris i britiske pund" value=1000> airBNB pris for alle dagene
+    <br>
+    <button id="fly" onclick="matte(this.id)">fly</button><button id="bil" onclick="matte(this.id)">bil</button>
+    <div id="output"></div>
+</body>

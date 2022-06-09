@@ -1,0 +1,145 @@
+body {
+	background-color: #121212;
+    scroll-behavior:smooth;
+    animation: loadin 2s;
+    transition: 300ms;
+}
+@keyframes loadin {
+    0% {background-color:rgb(68, 68, 68);opacity:0%}
+    50% {background-color:#121212;}
+    100% {opacity:100%}
+}
+
+.numbguess {
+	margin-top: 10%;
+    text-align:center;
+    margin: 0 auto;
+    padding-left:auto;
+    padding-right:auto;
+}
+.numbguess > input[type=number] {
+	width: 30%;
+	font-size: 60px;
+	font-family:'Trebuchet MS';
+}
+.numbguess input[type=text] {
+	width: 30%;
+	font-size: 60px;
+	font-family:'Trebuchet MS';
+    border:none;
+    margin:none;
+    opacity: 80%;
+}
+.numbguess input[type=text]:hover {
+    background-color: rgb(196, 196, 196);
+}
+.numbguess input[type=submit] {
+	width: fit-content;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-size: 60px;
+	font-family:'Trebuchet MS';
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin:none;
+    opacity: 80%;
+}
+.numbguess input[type=submit]:hover {
+    background-color: rgb(196, 196, 196);
+}
+.gjet {
+	font-family:'Trebuchet MS';
+	font-size: 40px;
+    color:white;
+    opacity: 57%;
+}
+.game {
+    display: none;
+    text-align:center;
+}
+.start {
+    display: block;
+    text-align:center;
+	margin-top: 10%;
+}
+.startbutton {
+    width: 30%;
+    font-size: 40px;
+	font-family:'Trebuchet MS';
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin:none;
+    animation: fall 1s;
+}
+.startbutton:hover {
+    opacity: 80%;
+}
+@keyframes fall {
+    0% {margin-right:1000px}
+    100% {margin-right:0px}
+}
+.countdown {
+    font-family: 'trebuchet ms';
+    font-size: 40px;
+    text-align: center;
+    color:white;
+    opacity: 87%;
+	margin-top: 10%;
+    transition:1000ms ease;
+}
+.homebutton {
+    width: fit-content;
+    font-size: 17px;
+	font-family:'Trebuchet MS';
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin:none;
+}
+.homebutton:hover {
+    opacity: 70%;
+}
+#myProgress {
+    width: 30%;
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 50px;
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: #8f1111;
+    transition:600ms ease;
+    opacity: 20%;
+}
+.Resetbutton {
+    width: fit-content;
+    font-size: 17px;
+	font-family:'Trebuchet MS';
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin:none;
+}
+.tries {
+    color: white;
+    opacity: 60%;
+}
+#progressbarnumber {
+    color: white;
+    opacity: 0%;
+    transition: ease .5s;
+    font-size: 24px;
+	font-family:'Trebuchet MS';
+}
+#progressbarnumber:hover {
+    opacity: 90%;
+}

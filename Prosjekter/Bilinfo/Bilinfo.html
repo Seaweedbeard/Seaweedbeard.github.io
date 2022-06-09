@@ -1,0 +1,60 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Bilinfo</TITLE>
+    <link rel="stylesheet" href="Bilinfo.css">
+    <script src="Bilinfo.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onmousemove="mouse()" onmouseover="mouse()">
+    <form action="../prosjekt.html" target="_self">
+        <button class="homebutton" type="submit">Index</button>
+    </form><br>
+    <form onsubmit="return false">
+        <h2>Hvor mange liter forbruker bilen på 10km?<br>
+            <input type="number" id="a" placeholder="0.74" step="any"><br> Hvor mange liter rommer tanken?<br>
+            <input type="number" id="b" placeholder="60"><br>
+            <input type="submit" hidden onclick="kml()">
+            <p id="answer"></p>
+        </h2>
+    </form>
+
+    <h2>
+        <form>
+            <select onchange="cartable()" id="select">
+                <option value="" selected hidden>Velg en bil</option>
+                <option value="0" >Fiat 500</option>
+                <option value="1" >Porsche 911</option>
+                <option value="2" >Toyota Prius</option>
+            </select>
+        </form>
+        <table>
+            <tr>
+                <th>Bilmerke</th>
+                <th>Tank</th>
+                <th>Forbruk</th>
+            </tr>
+            <tr>
+                <h3>
+                    <td id="td1"></td>
+                    <td id="td2"></td>
+                    <td id="td3"></td>
+                </h3>
+            </tr>
+        </table>
+    </h2>
+    <button id="button" onclick="font()" onmouseenter="hint()" onmouseleave="hint()">Change font</button>
+    <h2>
+        <p id="hint"></p>
+    </h2>
+    <span id="mouse" style="width:5px;height:5px;background-color: rgb(255, 0, 0);padding:1px; border-radius: 20px; 
+    display:none; position: fixed; z-index: 10; pointer-events: none;"></span>
+    <p>
+        <br><br><br><br><br><br><br><br><br><br><br>
+    </p>
+</BODY>
+
+</HTML>

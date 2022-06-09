@@ -1,0 +1,112 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Valutakalkulator</TITLE>
+    <link rel="stylesheet" href="Valuta.css">
+    <script src="Valuta.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+<button class="homebtn"> <a href="../prosjekt.html" target="_self">
+    Index
+</a> </button><br>
+<h1>Regn ulike valutaer</h1>
+<div class="flags">
+    <div class="from" onclick="convert()">
+        <h1 style="font-size: 24px;">Fra:</h1>
+
+
+        <button class="flagbtn" id="norge" onclick="pickflag1(this.id)">
+            <svg height="80" width="110">
+                <rect x="0" y="0" width="110" height="80" fill="red" />
+                <rect x="30" y="0" width="20" height="80" fill="white" />
+                <rect x="0" y="30" width="110" height="20" fill="white" />
+                <rect x="35" y="0" width="10" height="80" fill="blue" />
+                <rect x="0" y="35" width="110" height="10" fill="blue" />
+            </svg>
+        </button>
+
+        <button class="flagbtn" id="sverige" onclick="pickflag1(this.id)">
+            <svg height="80" width="110">
+                <rect x="0" y="0" width="110" height="80" fill="blue" />
+                <rect x="32.5" y="0" width="15" height="80" fill="yellow" />
+                <rect x="0" y="32.5" width="110" height="15" fill="yellow" />
+            </svg>
+        </button>
+
+        <button class="flagbtn" id="danmark" onclick="pickflag1(this.id)">
+            <svg height="80" width="110">
+                <rect x="0" y="0" width="110" height="80" fill="red" />
+                <rect x="32.5" y="0" width="15" height="80" fill="white" />
+                <rect x="0" y="32.5" width="110" height="15" fill="white" />
+            </svg>
+        </button>
+
+        <button class="flagbtn" id="island" onclick="pickflag1(this.id)">
+            <svg height="80" width="110">
+                <rect x="0" y="0" width="110" height="80" fill="blue" />
+                <rect x="30" y="0" width="20" height="80" fill="white" />
+                <rect x="0" y="30" width="110" height="20" fill="white" />
+                <rect x="35" y="0" width="10" height="80" fill="red" />
+                <rect x="0" y="35" width="110" height="10" fill="red" />
+            </svg>
+        </button>
+
+
+    </div>
+
+    <div class="bottomtext">
+        <h3>Du valgte fra <span id="country1">norge</span> til <span id="country2">norge</span></h3>
+        <h2>Hvor mye vi du konvertere?</h2>
+        &nbsp&nbsp<input type="number" id="field1" onkeyup="convert()"><br>
+        <h2><span id="field1res">0</span> = <span id="field2">0</span></h2>
+    </div>
+
+    <div class="to" onclick="convert()">
+        <h1 style="font-size: 24px;">Til:</h1>
+
+
+        <button class="flagbtn" id="Norge" onclick="pickflag2(this.id)">
+            <svg height="80" width="110">
+                <rect x="0" y="0" width="110" height="80" fill="red" />
+                <rect x="30" y="0" width="20" height="80" fill="white" />
+                <rect x="0" y="30" width="110" height="20" fill="white" />
+                <rect x="35" y="0" width="10" height="80" fill="blue" />
+                <rect x="0" y="35" width="110" height="10" fill="blue" />
+            </svg>
+        </button>
+
+        <button class="flagbtn" id="Sverige" onclick="pickflag2(this.id)">
+            <svg height="80" width="110">
+                <rect x="0" y="0" width="110" height="80" fill="blue" />
+                <rect x="32.5" y="0" width="15" height="80" fill="yellow" />
+                <rect x="0" y="32.5" width="110" height="15" fill="yellow" />
+            </svg>
+        </button>
+
+        <button class="flagbtn" id="Danmark" onclick="pickflag2(this.id)">
+            <svg height="80" width="110">
+                <rect x="0" y="0" width="110" height="80" fill="red" />
+                <rect x="32.5" y="0" width="15" height="80" fill="white" />
+                <rect x="0" y="32.5" width="110" height="15" fill="white" />
+            </svg>
+        </button>
+
+        <button class="flagbtn" id="Island" onclick="pickflag2(this.id)">
+            <svg height="80" width="110">
+                <rect x="0" y="0" width="110" height="80" fill="blue" />
+                <rect x="30" y="0" width="20" height="80" fill="white" />
+                <rect x="0" y="30" width="110" height="20" fill="white" />
+                <rect x="35" y="0" width="10" height="80" fill="red" />
+                <rect x="0" y="35" width="110" height="10" fill="red" />
+            </svg>
+        </button>
+
+    </div>
+</div>
+
+
+</BODY>
+
+</HTML>

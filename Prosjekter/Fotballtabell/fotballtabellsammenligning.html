@@ -1,0 +1,124 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Fotballtabell</TITLE>
+    <link rel="stylesheet" href="fotballtabell.css">
+    <script type="text/javascript" src="lag.js"></script>
+    <script src="fotballtabell.js"></script>
+    <!--<script src="lag.json"></script>-->
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+
+
+</HEAD>
+
+<BODY>
+    <header>
+        <h1>
+            <button class="homebutton" onclick="location.href='../prosjekt.html'">Index</button>
+            <span class="sitename">Fotballtabell!</span>
+        </h1>
+    </header>
+    <form id="inputlag">
+        <input id="inplagnavn1" type="text" placeholder="Lag 1">
+        <input id="inpmål1" type="number" placeholder="Antall mål">
+        <input id="inpmål2" type="number" placeholder="Antall mål">
+        <input id="inplagnavn2" type="text" placeholder="Lag 2">
+        <button type="submit" class="button">Registrer kamp</button>
+    </form>
+    <table id="tbodytitle">
+        <table id="tbodylag"></table>
+    </table>
+    <button onclick="clearjson()">Clear</button>
+
+    <script>
+        class Soccer {
+            constructor(ln, ks, ms, mm, vu, ua, ta, po) {
+                this.ln = ln;
+                this.ks = ks;
+                this.ms = ms;
+                this.mm = mm;
+                this.vu = vu;
+                this.ua = ua;
+                this.ta = ta;
+                this.po = po;
+            }
+
+            get tablerow() {
+                return `
+                    <tr>
+                        <td>${this.ln}</td>
+                        <td>${this.ks}</td> 
+                        <td>${this.ms}</td> 
+                        <td>${this.mm}</td>
+                        <td>${this.vu}</td> 
+                        <td>${this.ua}</td>
+                        <td>${this.ta}</td>
+                        <td>${this.po}</td>
+                    </tr>`
+            }
+        }
+
+        for (let x = 0; x < Lagfiler.length; x++) {
+            console.log(Lagfiler[x]);
+            Lagfiler[x].ks++;
+        }
+        //console.log(Lagfiler.lager[0].id);
+
+        var inputlag = document.getElementById('inputlag');
+        var tbodylag = document.getElementById('tbodylag');
+        var inplagnavn1 = document.getElementById('inplagnavn1');
+        var inpks = document.getElementById('inpmål1');
+        var inpms = document.getElementById('inpmål2');
+        var inplagnavn2 = document.getElementById('inplagnavn2');
+        var teams = new Map();
+
+        function oppdaterTabell() {
+            tbodylag.innerHTML =
+                '<tr><th>ln</th><th>ks</th><th>ms</th><th>mm</th><th>vu</th><th>ua</th><th>ta</th><th>po</th></tr>';
+            var ar = Array.from(teams.values());
+            ar.sort(function(a, b) {
+                return b.po - a.po;
+            });
+            for (var soccerteam of ar.values()) {
+                tbodylag.innerHTML += soccerteam.tablerow;
+            }
+            localStorage.mineLag = JSON.stringify(ar);
+
+        }
+
+        if (localStorage.mineLag) {
+            var mineLagredeLag = JSON.parse(localStorage.mineLag);
+            for (var k of mineLagredeLag) {
+                var nyttLag = new Soccer(k.ln, k.ks, k.ms, k.mm, k.vu, k.ua, k.ta, k.po);
+                teams.set(nyttLag.ln, nyttLag)
+            }
+            oppdaterTabell();
+        }
+
+        function clearjson() {
+            localStorage.clear();
+            document.getElementById("tbodylag").innerHTML = "";
+        }
+
+        inputlag.onsubmit = function(evt) {
+            evt.preventDefault();
+            var ln = inplagnavn.value;
+            var ks = inpks.value;
+            var ms = inpms.value;
+            var mm = inpmm.value;
+            var vu = Number(inpvu.value);
+            var ua = Number(inpua.value);
+            var ta = inpta.value;
+            let po = vu * 3 + ua
+            var newteam = new Soccer(ln, ks, ms, mm, vu, ua, ta, po);
+            teams.set(ln, newteam);
+            oppdaterTabell();
+            inplagnavn.value = inpks.value = inpms.value = inpmm.value = inpvu.value = inpua.value = inpta.value = "";
+            inplagnavn.focus();
+        }
+    </script>
+</BODY>
+
+</HTML>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Monty Hall Problemet</TITLE>
+    <link rel="stylesheet" href="MH.css">
+    <script src="MH.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onload="randomdoor()">
+    <div class="homebtn" style="height:5vh">
+        <a href="../prosjekt.html">
+            <h2>Index</h2>
+        </a>
+    </div>
+
+    <p>
+        <div class="doors" id="doors">
+            <div class="doorflip">
+                <input type="button" value="Dør 1" class="doorbtn" id="door1" onclick="pickdoor(this.id)">
+            </div>
+            <div class="reveal" id="d1">
+                Goat
+            </div>
+            <div class="doorflip">
+                <input type="button" value="Dør 2" class="doorbtn" id="door2" onclick="pickdoor(this.id)">
+            </div>
+            <div class="reveal" id="d2">
+                Goat
+            </div>
+            <div class="doorflip">
+                <input type="button" value="Dør 3" class="doorbtn" id="door3" onclick="pickdoor(this.id)">
+            </div>
+            <div class="reveal" id="d3">
+                Goat
+            </div>
+        </div>
+        <p class="confirmationtext" id="confirmationtext">
+            Velg en dør
+        </p>
+        <p id="confirmationbtnid" class="confirmationbtnid">
+            <button id="confirmationbtnyes" class="confirmationbtn" onclick="choosedoor(this.id)">Ja</button>
+            <button id="confirmationbtnno" class="confirmationbtn" onclick="choosedoor(this.id)">Nei</button>
+            <button id="confirmationbtnyesyes" class="confirmationbtn" onclick="choosedoor(this.id)">Ja</button>
+            <button id="confirmationbtnnono" class="confirmationbtn" onclick="choosedoor(this.id)">Nei</button>
+
+            <button id="confirmationbtnrestart" class="confirmationbtn" onclick="restart()">Prøv igjen</button>
+        </p>
+</BODY>
+
+</HTML>

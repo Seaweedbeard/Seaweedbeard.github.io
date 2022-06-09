@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12121200;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+body {
+    background-color: #121212;
+    overflow: none;
+    margin: 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    opacity: 80%;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #FFFFFF12;
+}
+
+.homebutton {
+    margin: 20px;
+    width: fit-content;
+    float: left;
+}
+
+.homebutton:hover {
+    background-color: #1b1b1b;
+    cursor: pointer;
+    float: left;
+}
+
+header {
+    background-color: #0c0c0c;
+    height: 100%;
+    width: 100%;
+    padding: -150px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+    color: #FFFFFF;
+    opacity: 87%;
+    width: 100%;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+}
+
+h3 {
+    font-family: "Quicksand", sans-serif;
+}
+
+.centered {
+    text-align: center;
+    float: center;
+}
+
+#listinput {
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    opacity: 80%;
+}
+
+#listinput:focus {
+    outline: none;
+}
+
+input[type=checkbox] {
+    height: 30px;
+    width: 30px;
+}
+
+input[type=checkbox]:checked {
+    opacity: 20%;
+}
+
+.deletebutton {
+    text-align: center;
+    font-size: 12px;
+    padding: 0px;
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+.deletebutton:hover {
+    cursor: pointer;
+    background-color: #ffffff46;
+}

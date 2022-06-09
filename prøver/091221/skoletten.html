@@ -1,0 +1,116 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Skoletten - Alt for deg</TITLE>
+    <link rel="stylesheet" href="skoletten.css">
+    <script src="skoletten.js"></script>
+    <meta charset="UTF-8">
+</HEAD>
+
+<BODY>
+    <div class="centersvg">
+    <svg height="150px" width="768px">
+
+        <g name="backgroundart">
+            <ellipse rx="20" ry="30" fill="orange" />
+            <ellipse cx="190" cy="80" ry="100" rx="200" fill="lightblue" />
+            <ellipse cx="400" cy="140" ry="20" rx="30" fill="pink" />
+        </g>
+
+        <g name="shoe">
+            <rect x="500" y="50" height="70" width="180" fill="black" onmouseover="showshoe()" onmouseleave="showshoe()"/>
+            <ellipse cx="552" cy="40" rx="50" ry="30" fill="white" />
+            <ellipse cx="680" cy="40" rx="100" ry="50" fill="white" />
+            <ellipse cx="497" cy="70" rx="10" ry="70" fill="white" />
+            <circle cx="679" cy="105" r=14.7 fill="black" onmouseover="showshoe()" onmouseleave="showshoe()" />
+            <rect x="505" y="48" height="10" width="10" fill="white"/>
+            <rect x="505" y="110" height="10" width="187" fill="black" onmouseover="showshoe()" onmouseleave="showshoe()"/>
+        </g>
+
+        <g name="skolettentext">
+            <text x="30" y="100" font-size="60px">SKO</text>
+            <text x="140" y="100" font-size="60px" fill="brown">L</text>
+            <text x="171" y="100" font-size="60px">ETTEN</text>
+        </g>
+    </svg>
+    <div id="hovertext">Feel the love</div><br>
+        <button onclick="showvideo()" id="videobutton">Kort filmsnutt?</button>
+        <br>
+        <video id="video" width="900vw" src="video/crocs.mp4" controls></video><br>
+    
+    valuta:
+    <select id="monet" onchange="changemonet()">
+        <option picked id="0">NOK</option>
+        <option id="1">DKK</option>
+        <option id="2">SEK</option>
+        <option id="3">ISK</option>
+    </select> 
+    <br>
+    Bare den endelige prisen endrer seg etter valutaen du velger
+    <br>
+    Salg
+    
+    <br>
+
+
+<div class="shoes">
+    <div class="card" id="crocs1card">
+        <img src="bilde/blackcrocs.png" width="200px"><br>
+        Svarte crocs<br>
+        <span id="pris1">200</span><span class="valuta"> nok</span>
+        <br><button id="1" onclick="buy(this.id)">Legg til i handlevognen</button>
+    </div>
+    <div class="card" id="crocs2card">
+        <img src="bilde/bluecrocs.png" width="200px"><br>
+        Blå crocs<br>
+        <span id="pris2">199</span><span class="valuta"> nok</span>
+        <br><button id="2" onclick="buy(this.id)">Legg til i handlevognen</button>
+    </div>
+    <div class="card" id="crocs3card">
+        <img src="bilde/browncrocs.png" width="200px"><br>
+        Brune crocs<br>
+        <span id="pris3">180</span><span class="valuta"> nok</span>
+        <br><button id="3" onclick="buy(this.id)">Legg til i handlevognen</button>
+    </div>
+    <div class="card" id="crocs4card">
+        <img src="bilde/foodcrocs.png" width="200px"><br>
+        Matcrocs<br>
+        <span id="pris4">500</span><span class="valuta"> nok</span>
+        <br><button id="4" onclick="buy(this.id)">Legg til i handlevognen</button>
+    </div>
+    <div class="card" id="crocs5card">
+        <img src="bilde/pinkcrocs.png" width="200px"><br>
+        Rosa crocs<br>
+        <span id="pris5">300</span><span class="valuta"> nok</span>
+        <br><button id="5" onclick="buy(this.id)">Legg til i handlevognen</button>
+    </div>
+    <div class="card" id="crocs6card">
+        <img src="bilde/pinkcrocs2.png" width="200px"><br>
+        Mer rosa crocs<br>
+        <span id="pris6">300</span><span class="valuta"> nok</span>
+        <br><button id="6" onclick="buy(this.id)">Legg til i handlevognen</button>
+    </div>
+    <div class="card" id="crocs7card">
+        <img src="bilde/purplecrocs.png" width="200px"><br>
+        Lilla crocs<br>
+        <span id="pris7">150</span><span class="valuta"> nok</span>
+        <br><button id="7" onclick="buy(this.id)">Legg til i handlevognen</button>
+    </div>
+
+</div>
+    
+
+    <br>Handlekurv:
+    <br> Pris: <span id="price"></span><span id="money"></span>
+    <div id="handlekurv">
+
+        
+    </div>
+    
+    </div> 
+    
+    
+</BODY>
+
+</HTML>

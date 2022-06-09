@@ -1,0 +1,84 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Fysikk</TITLE>
+    <link rel="stylesheet" href="physics.css">
+    <script src="physics.js"></script>
+    <meta charset="UTF-8">
+    <link id="favicon" rel="shortcut icon" type="image/png" href="../../Bilder/Icon/physicsredball1.png" />
+</HEAD>
+
+<BODY>
+    <header>
+        <h1>
+            <form class="homebtn" action="../../index.html" target="_self">
+                <button class="homebutton" type="submit">Index</button>Fysikk</h1>
+        </form>
+    </header>
+
+    <div class="spa" id="spa">
+        <div class="turn">
+            <canvas id="myCanvas" height="480" width="900" style="border: 1px white solid;" onmousedown="clickscreen(); dragcube(event)" onmousemove="dragcube(event)" onmouseup="removeclickscreen()"></canvas>
+            <button id="begin" onclick="begin()">Start</button>
+            <span class="buttons" id="buttons">
+        <div class="info">
+            <span class="speed" id="speed">Noe gikk galt</span>
+            <br>
+            <span class="groundres" id="groundres">Noe gikk galt</span>
+            <br>
+            <span class="airres" id="airres">Noe gikk galt</span>
+        </div>
+        <div class="controlpanel">
+            <div class="setting">
+                Friksjon?<br>
+                <input type=checkbox checked id="friction" oninput="changevar(this.id)">
+            </div>
+            <div class="setting">
+                Behold fart på klikk?<br>
+                <input type=checkbox id="keepspeedonclick" oninput="changevar(this.id)">
+            </div>
+            <div class="setting">
+                Akselerasjon:<br>
+                <input type="number" id="acceleration" oninput="changevar(this.id)">
+            </div>
+            <div class="setting">
+                Hoppekraft:<br>
+                <input type="number" id="jump" oninput="changevar(this.id)">
+            </div>
+            <div class="setting">
+                Tyngde akselerasjon:<br>
+                <input type="number" id="g" oninput="changevar(this.id)">
+            </div>
+            <div class="setting">
+                X-Maksfart:<br>
+                <input type="number" id="maxspeed" oninput="changevar(this.id)">
+            </div>
+            <div class="setting">
+                Masse:<br>
+                <input type="number" id="mass" oninput="changevar(this.id)">
+            </div>
+            <div class="setting">
+                Luft tetthet:<br>
+                <input type="number" id="airdensity" oninput="changevar(this.id)">
+            </div>
+            <div class="setting">
+                Luftmotstands koeffisient:<br>
+                <input type="number" id="dragcoefficient" oninput="changevar(this.id)">
+            </div>
+            <div class="setting">
+                Høyde:<br>
+                <input type="number" id="height" oninput="changevar(this.id)">
+            </div>
+            <div class="setting">
+                Bredde:<br>
+                <input type="number" id="width" oninput="changevar(this.id)">
+            </div>
+        </div>
+        </span>
+    </div>
+
+    </div>
+</BODY>
+
+</HTML>

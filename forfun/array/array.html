@@ -1,0 +1,128 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>Velg spill</TITLE>
+    <link rel="stylesheet" href="array.css">
+    <script src="array.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
+</HEAD>
+
+<BODY onload="layout(); setup();">
+    <div class="cover"></div>
+    <header>
+        <h1>
+            <button class="homebutton" onclick="location.href='../../index.html'">Index</button><span class="sitename">SPILL!</span>
+            <button class="choosegame" id="tttictactoe" onclick="pickgame(this.id)">TRE PÅ RAD</button>
+            <button class="choosegame" id="hangman" onclick="pickgame(this.id)">HANGMAN</button>
+            <button class="choosegame" id="clicker" onclick="pickgame(this.id)">CLICKER</button>
+        </h1>
+    </header>
+
+    <div class="info" id="info">
+        Velg et spill fra menyen ovenfor
+    </div>
+
+    <div class="tictactoe" id="ttt" style="display: none;">
+
+        <div class="turn" id="turn">
+            Spiller:<br> <span id="XOturn">X</span>
+        </div> <br>
+
+        <div class="grid">
+            <div class="gridbox" id="ttt1" onclick="symbol(this.id)"></div>
+            <div class="gridbox" id="ttt2" onclick="symbol(this.id)"></div>
+            <div class="gridbox" id="ttt3" onclick="symbol(this.id)"></div>
+            <div class="gridbox" id="ttt4" onclick="symbol(this.id)"></div>
+            <div class="gridbox" id="ttt5" onclick="symbol(this.id)"></div>
+            <div class="gridbox" id="ttt6" onclick="symbol(this.id)"></div>
+            <div class="gridbox" id="ttt7" onclick="symbol(this.id)"></div>
+            <div class="gridbox" id="ttt8" onclick="symbol(this.id)"></div>
+            <div class="gridbox" id="ttt9" onclick="symbol(this.id)"></div>
+            <button id="reset" onclick="reset()" style="display:absolute">START</button>
+        </div>
+
+        <span class="winner" id="winner"></span>
+
+
+        <div class="log">
+            <h2>Logg</h2>
+            <ol>
+                <div class="loglist" id="loglist">
+
+                </div>
+            </ol>
+        </div>
+    </div>
+
+    <div class="hangman" id="han" style="display: none;">
+
+        <div class="hmpostchoice" id="hmp" style="display: none;">
+            <div class="hmguess" id="hmguess"></div>
+            <div class="hminputaround" id="hminputaround">
+                <input class="hminput" id="hminput" oninput="checklength()" placeholder="Klikk her så skriver du inn bokstavene">
+            </div>
+            <button id="hmreset" onclick="hmreset()" style="display:none">RESET</button>
+            <div class="hmguessed" id="hmguessed"></div>
+        </div>
+        <div class="hmhealth" id="hmhealth">
+            Velg vanskelighetsgrad: <br>
+            <button class="difficultybutton" id="Let" onclick="choosehealth(this.id)">Lett</button>
+            <button class="difficultybutton" id="Med" onclick="choosehealth(this.id)">Medium</button>
+            <button class="difficultybutton" id="Van" onclick="choosehealth(this.id)">Vanskelig</button>
+        </div>
+
+    </div>
+
+    <div class="clicker" id="cli" style="display: none;">
+        <div class="crclickerbutton">
+            <button class="clickerbutton" id="crbtn" onclick="klikk()"></button>
+        </div>
+
+        <div class="crbought">
+            <div class="crshoptitle">Purchased</div>
+            <div class="crshopcontent">
+                <div class="crshopthing" id="crauto0boughtthing">Weakest Multiplier: <span class="boughtamount" id="crauto0bought">0</span></div>
+                <div class="crshopthing" id="crauto1boughtthing">Weaker Multiplier:<span class="boughtamount" id="crauto1bought">0</span></div>
+                <div class="crshopthing" id="crauto2boughtthing">Weak Multiplier:<span class="boughtamount" id="crauto2bought">0</span></div>
+                <div class="crshopthing" id="crauto3boughtthing">Normal Multiplier:<span class="boughtamount" id="crauto3bought">0</span></div>
+                <div class="crshopthing" id="crauto4boughtthing">Strong Multiplier: <span class="boughtamount" id="crauto4bought">0</span></div>
+                <div class="crshopthing" id="crauto5boughtthing">Stronger Multiplier:<span class="boughtamount" id="crauto5bought">0</span></div>
+                <div class="crshopthing" id="crauto6boughtthing">Strongest Multiplier:<span class="boughtamount" id="crauto6bought">0</span></div>
+                <div class="crshopthing" id="crauto7boughtthing">Super Multiplier:<span class="boughtamount" id="crauto7bought">0</span></div>
+            </div><br><br>
+            <button class="crsave" onclick="save()">Save</button>
+            <button onclick="clearsave()">Clear save</button>
+        </div>
+
+        <div class="crshop" id="crshop">
+
+            <div class="crshoptitle">Shop</div>
+
+            <div class="crshopcontent">
+                <div class="crshopthing" id="crauto0"><button class="crauto0" id="crauto0btn" onclick="shop(this.id)">Weakest multiplier</button><br>Cost:
+                    <span class="price" id="crauto0price"></span><br>Increases points per click by 1</div>
+                <div class="crshopthing" id="crauto1"><button class="crauto1" id="crauto1btn" onclick="shop(this.id)">Weaker multiplier</button><br>Cost:
+                    <span class="price" id="crauto1price">100</span><br>Increases points per click by 10</div>
+                <div class="crshopthing" id="crauto2"><button class="crauto2" id="crauto2btn" onclick="shop(this.id)">Weak multiplier</button><br>Cost:
+                    <span class="price" id="crauto2price">10000</span><br>Increases points per click by 100</div>
+                <div class="crshopthing" id="crauto3"><button class="crauto3" id="crauto3btn" onclick="shop(this.id)">Normal multiplier</button><br>Cost:
+                    <span class="price" id="crauto3price">100000</span><br>Increases points per click by 1000</div>
+                <div class="crshopthing" id="crauto4"><button class="crauto4" id="crauto4btn" onclick="shop(this.id)">Strong multiplier</button><br>Cost:
+                    <span class="price" id="crauto4price">10000000</span><br>Increases points per click by 10000</div>
+                <div class="crshopthing" id="crauto5"><button class="crauto5" id="crauto5btn" onclick="shop(this.id)">Stronger multiplier</button><br>Cost:
+                    <span class="price" id="crauto5price">100000000</span><br>Increases points per click by 100000</div>
+                <div class="crshopthing" id="crauto6"><button class="crauto6" id="crauto6btn" onclick="shop(this.id)">Strongest multiplier</button><br>Cost:
+                    <span class="price" id="crauto6price">10000000000</span><br>Increases points per click by 1000000</div>
+                <div class="crshopthing" id="crauto7"><button class="crauto7" id="crauto7btn" onclick="shop(this.id)">Super multiplier</button><br>Cost:
+                    <span class="price" id="crauto7price">100000000000</span><br>Increases points per click by 10000000</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</BODY>
+
+</HTML>
