@@ -10,16 +10,29 @@
     <link rel="icon" href="../../Bilder/Seaweedbeard.png" />
 </HEAD>
 
-<BODY onload="adaptSpeed();" onresize="/*alert('Window resized. Calibrating screen');location.reload()*/">
+<BODY onload="adaptSpeed(); storeKeys('initial');" onresize="/*alert('Window resized. Calibrating screen');location.reload()*/">
     <canvas id="canvas" height="100%" width="100%"></canvas>
     <div id="Player_info">
         <div id="Player1_info">
-            <div id="Player1_info_icon">Ruben</div>
-            <div id="Player1_info_healthbar"></div>
+            <span id="Player1_info_icon"></span>
+            <span id="Player1_info_name">Ruben</span><br>
+            <div id="Player1_info_healthbar_bg">
+                <div id="Player1_info_healthbar"></div>
+            </div><br>
+            <div id="Player1_info_move">
+            </div>
+        </div>
+        <div id="timer">
+            <span id="timer_text">000</span>
         </div>
         <div id="Player2_info">
-            <div id="Player2_info_healthbar"></div>
-            <div id="Player2_info_icon">Stian</div>
+            <span id="Player2_info_icon"></span>
+            <span id="Player2_info_name">Stian</span><br>
+            <div id="Player2_info_healthbar_bg">
+                <div id="Player2_info_healthbar"></div>
+            </div><br>
+            <div id="Player2_info_move">
+            </div>
         </div>
     </div>
 
@@ -37,8 +50,8 @@
                 <div id="startmenu_char_selection_title">
                     <h2>Choose your fighter</h2>
                 </div>
+                <span id="playerchoosing">Player 1:</span>
                 <div class="chargrid" id="chargrid">
-                    <span id="playerchoosing">Player 1:</span>
                     <div class="characters">
                         <img src="../../Bilder/Sprite/characters/Stæn.jpg" alt="Stian" onmouseover="showinfo('Stian')" onclick="selectChar('Stian');" width="100%" height="100%;">
                     </div>
@@ -82,11 +95,97 @@
         </div>
     </div>
 
-    <div id="intro">
+    <div id="settings">
+        <div id="settings_content">
+            <div id="settings_content_buttons">
+                <button onclick="location.href='../../index.html'">Index</button>
+                <button onclick="openSettings();">Close</button>
+            </div>
+            <div id="settings_content_settings">
+                <div id="settings_content_settings_title">
+                    <h2>Settings</h2>
+                </div>
+                <div id="settings_content_settings_content">
+                    <div id="settings_content_settings_content_speed">
+                        <table id="settings_content_settings_content_key_change">
+                            <th>
+                                <h3>Player 1 keys</h3>
+                            </th>
+                            <th>
+                                <h3>Player 2 keys</h3>
+                            </th>
+                            <tr>
+                                <td>Left<input id="left1" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>
+                                </td>
+                                <td><input id="left2" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>Left
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Right<input id="right1" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>
+                                </td>
+                                <td><input id="right2" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>Right
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jump<input id="up1" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>
+                                </td>
+                                <td><input id="up2" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>Jump
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Crouch<input id="down1" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>
+                                </td>
+                                <td><input id="down2" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>Crouch
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Block<input id="block1" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>
+                                </td>
+                                <td><input id="block2" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>Block
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Punch<input id="punch1" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>
+                                </td>
+                                <td><input id="punch2" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>Punch
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kick<input id="kick1" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>
+                                </td>
+                                <td><input id="kick2" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key"></input>Kick
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp</td>
+                            </tr>
+                            <tr>
+                                <th>Extra keys</th>
+                            </tr>
+                            <tr>
+                                <td><input id="pause1" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key">Pause</input>
+                                </td>
+                                <td><input id="addTime1" onfocusout="revertKeyChange(this.id)" onclick="changeKeyPrep(this.id);" onkeydown="changeKey(this.id, event)" placeholder="Enter new key">Reset</input>
+                            </tr>
+                        </table>
+                        <button onclick="storeKeys('reset')">Reset &nbsp mapping</button>
+                    </div>
+                    <div id="settings_content_settings_content_sound">
+                        <h3>Sound (Not working)</h3>
+                        <div id="settings_content_settings_content_sound_slider">
+                            <input type="range" min="0" max="100" value="0" id="sound" onchange="setSound();">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div id="intro">
         <div id="intro_char1">
             <img src="../../Bilder/Seaweedbeard.png" alt="Seaweedbeard">
         </div>
-    </div>
+    </div>-->
 
     <div id="pausemenu">
         <div id="pausemenu_content">
@@ -97,7 +196,9 @@
                 <button onclick="pause()">Resume</button>
                 <button onclick="location.reload()">Reset</button>
                 <button onclick="location.href='../../index.html'">Index</button>
-                <br> Controls: <br> P1: W, A, S, D, G, H <br> P2: Up, Left, Down, Right, K, L <br>
+                <br> Controls: <br> P1: <span id="p1keys">W, A, S, D, G, H </span>
+                <br> P2: <span id="p2keys">Up, Left, Down, Right, K, L </span>
+                <br> For more time, press <span id="extraKeys">T</span>
                 <br>
             </div>
         </div>

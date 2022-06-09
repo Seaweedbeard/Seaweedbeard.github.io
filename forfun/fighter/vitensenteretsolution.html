@@ -1,0 +1,66 @@
+<head>
+    <meta charset="utf-8">
+    <title>Vitensenteret</title>
+    <style>
+        body {
+            overflow-y: visible;
+            white-space: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="loop()">Solve it</button>
+    <ol>
+        <div id="output">
+        </div>
+    </ol>
+    <script>
+        let n = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        let d = document.getElementById("output");
+        let h = []; //Order history
+        //let i = 0;
+        let l = 3628800; //Number of possible combinations
+
+        function loop() {
+            //3628800
+            for (let i = 0; i < l; i++) {
+                let temp = n.slice();
+                //randomize the array
+                let exists = false;
+                if (h.length > 0) {
+                    for (let j = 0; j < h.length; j++) {
+                        if (JSON.stringify(temp) == JSON.stringify(h[j])) {
+                            exists = true;
+                            break;
+                        }
+                    }
+                }
+                if (exists) {
+                    for (let j = 0; j < temp.length; j++) {
+                        let r = Math.floor(Math.random() * temp.length);
+                        let temp2 = temp[r];
+                        temp[r] = temp[j];
+                        temp[j] = temp2;
+                    }
+                    n = temp;
+                    l++;
+                }
+                if (!exists) {
+                    for (let j = 0; j < temp.length; j++) {
+                        let r = Math.floor(Math.random() * temp.length);
+                        let temp2 = temp[r];
+                        temp[r] = temp[j];
+                        temp[j] = temp2;
+                    }
+                    n = temp;
+                    h.push(temp);
+                    let sum = Number(n[0] + n[1] + n[2]) * Number(n[3] + n[4]) - Number(n[5] + n[6] + n[7]) * Number(n[8] + n[9]);
+                    if (sum == 0) {
+                        d.innerHTML += "<li>(" + n[0] + n[1] + n[2] + ") * (" + n[3] + n[4] + ") - (" + n[5] + n[6] + n[7] + ") * (" + n[8] + n[9] + ") = " + sum + "</li>";
+                    }
+                }
+            }
+        }
+    </script>
+</body>

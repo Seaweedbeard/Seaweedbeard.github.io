@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+@font-face {
+    font-family: 'arcade';
+    src: url('../../fonts/arcadeclassic.TTF') format('truetype');
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -21,12 +26,13 @@ body {
     overflow: none;
     margin: 0;
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'arcade';
     font-size: 24px;
+    letter-spacing: 2px;
 }
 
 button {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'arcade';
     padding: 8px;
     font-size: 20px;
     border: 1px solid white;
@@ -60,7 +66,7 @@ header {
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'arcade';
     font-size: 38px;
     color: #FFFFFF;
     text-align: left;
@@ -69,11 +75,11 @@ h1 {
 }
 
 h2 {
-    font-family: "Quicksand", sans-serif;
+    font-family: "arcade";
 }
 
 h3 {
-    font-family: "Quicksand", sans-serif;
+    font-family: "arcade";
 }
 
 #canvas {
@@ -86,7 +92,62 @@ h3 {
     z-index: 1;
 }
 
+#settings {
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #414141;
+    line-height: 10px;
+    z-index: 5;
+    transition: .5s ease-out;
+}
+
+#settings_content {
+    padding-top: 50px;
+}
+
+#settings_content_settings_content_key_change {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#settings_content_settings_content_key_change td:not(:last-child) {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+#settings_content_settings_content_key_change td:not(:first-child) {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+#settings_content_settings_content_key_change input {
+    width: 100px;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#settings_content_title h1 {
+    font-family: 'arcade';
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+    opacity: 87%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 #startmenu {
+    text-align: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -94,10 +155,11 @@ h3 {
     height: 100%;
     background-color: #121212;
     z-index: 4;
+    transition: .6s ease-in;
 }
 
 #startmenu h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'arcade';
     font-size: 38px;
     color: #FFFFFF;
     text-align: left;
@@ -106,10 +168,15 @@ h3 {
 }
 
 #startmenu_content_title h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 48px;
-    color: #FFFFFF;
-    text-align: left;
+    font-family: 'arcade';
+    font-size: 54px;
+    color: #ff0000;
+    background-image: linear-gradient(to left, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
     opacity: 87%;
     width: 100%;
 }
@@ -120,8 +187,13 @@ h3 {
 }
 
 #startmenu h2 {
-    font-family: "Quicksand", sans-serif;
+    font-family: "arcade";
     opacity: 80%;
+}
+
+#vsvsvs {
+    font-size: 200px;
+    margin: 30px;
 }
 
 .chargrid {
@@ -152,14 +224,14 @@ h3 {
 }
 
 #playerchoosing {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'arcade', sans-serif;
     font-size: 38px;
     color: #FFFFFF;
     opacity: 87%;
 }
 
 #charinfo {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'arcade', sans-serif;
     font-size: 24px;
     color: #FFFFFF;
     opacity: 87%;
@@ -180,7 +252,7 @@ h3 {
 }
 
 #pausemenu h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'arcade', sans-serif;
     font-size: 38px;
     color: #FFFFFF;
     text-align: center;
@@ -190,30 +262,116 @@ h3 {
 }
 
 #Player_info {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 24px;
+    position: absolute;
+    font-family: 'arcade', sans-serif;
+    font-size: 42px;
     color: #FFFFFF;
     opacity: 87%;
     z-index: 3;
     display: none;
-    text-align: center;
-    height: 100%;
+    height: 30%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #Player_info #Player1_info {
-    position: absolute;
+    position: initial;
+    text-align: left;
     float: left;
-    width: 50%;
+    width: 40%;
     height: 100%;
     margin-top: 20px;
-    margin-left: 20px;
+    padding-left: 20px;
+    float: left;
+}
+
+#Player1_info_healthbar {
+    background: red;
+    opacity: 100%;
+    width: 350px;
+    height: 30px;
+    float: left;
+    transition: ease-out 0.5s;
+}
+
+#Player1_info_healthbar_bg {
+    background: #b6b6b6;
+    width: 350px;
+    height: 30px;
+    float: left;
+    transition: ease-out 0.5s;
+    transition-delay: .3s;
+}
+
+#Player1_info_icon {
+    float: left;
+    width: 20%;
+    margin-right: 10px;
 }
 
 #Player_info #Player2_info {
-    position: absolute;
+    position: initial;
     float: right;
-    width: 50%;
+    text-align: right;
+    width: 40%;
     height: 100%;
     margin-top: 20px;
-    margin-right: 20px;
+    padding-right: 20px;
+    float: right;
+}
+
+#Player2_info_healthbar {
+    background: red;
+    opacity: 100%;
+    width: 350px;
+    height: 30px;
+    float: right;
+    transition: ease-out 0.5s;
+}
+
+#Player2_info_healthbar_bg {
+    background: #b6b6b6;
+    width: 350px;
+    height: 30px;
+    float: right;
+    transition: ease-out 0.5s;
+    transition-delay: 1s;
+}
+
+#Player1_info_move {
+    font-size: 26px;
+}
+
+#Player2_info_move {
+    font-size: 26px;
+}
+
+#Player2_info_icon {
+    float: right;
+    width: 20%;
+    margin-left: 10px;
+}
+
+#timer {
+    display: none;
+    text-align: center;
+    position: fixed;
+    width: 90vw;
+    margin-top: 20px;
+}
+
+#timer_text {
+    display: block;
+    margin: auto;
+    padding: none;
+    background-color: rgba(255, 255, 255, 0.603);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 64px;
+    font-family: 'arcade', sans-serif;
+    color: #000000;
+    opacity: 87%;
 }

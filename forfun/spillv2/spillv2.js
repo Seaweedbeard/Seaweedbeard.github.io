@@ -15,7 +15,7 @@ function nono() {
                 milliseconds = 0;
                 seconds++;
             }
-            timediv.innerHTML = seconds + ":" + milliseconds;
+            timediv.innerHTML = seconds + ":" + milliseconds + " Sacred time units";
             document.body.appendChild(timediv);
             setTimeout(time, 10);
         }
