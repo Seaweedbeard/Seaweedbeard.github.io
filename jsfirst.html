@@ -1,0 +1,77 @@
+<!Doctype HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>First Javascript</TITLE>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Stilark/Stilark.css">
+    <link rel="stylesheet" href="Stilark/calcstilark.css">
+    <script src="javascript/scripts.js"></script>
+    <script src="javascript/calcscript.js"></script>
+    <link rel="icon" href="bilder/Seaweedbeard.png" />
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</HEAD>
+
+<BODY onload="startTime()">
+    <form action="index.html" target="_self">
+        <button class="button" type="submit">Return to index</button>
+    </form><br>
+    <div class="left">
+        <p id="a">
+            This statement is false
+        </p>
+        <button onclick="a()">Correct</button>
+        <br><br>
+        <input type="text" oninput="edit()" id="editto">
+        <br><br>
+        <button onclick="warning()">Change text to your written text</button>
+        <br><br><br>
+        <input type="number" id="x" onKeyup="math(x, y)" onClick="math(x, y)"> + <input type="number" id="y" onKeyup="math(x, y)" onClick="math(x, y)">
+        <p id="math">math</p>
+
+        Change area color<br>
+        <input type="color" id="colora" oninput="colora()"><br>
+        <input type="range" min="0" max="100" value="100" class="slider" id="slider" oninput="glider()"><br><br>
+        <p class="colorc" id="colorc"></p><br>
+
+        <button onclick="confirma()">Confirm test</button>
+        <p></p>
+        <button onclick="prompta()">Prompt test</button>
+        <p id="promptest"></p>
+        <br><br>
+        <button id="setimage" value="Bilder/Stian.jpg" onclick="image()" ondblclick="imagegone()">Look at handsome</button>
+        <br><br>
+        <button id="dice" onclick="dice()">Kast terning</button>
+        <br>
+        <p id="diceres"></p>
+        <div id="clock"></div>
+
+        <p id="cursor">
+            <button id="1" value="Pointer" onclick="cchange(this.id)">Pointer</button>
+            <button id="2" value="Crosshair" onclick="cchange(this.id)">Crosshair</button>
+            <button id="3" value="Default" onclick="cchange(this.id)">Default</button>
+            <button id="4" value="Progress" onclick="cchange(this.id)">Progress</button>
+        </p>
+
+        <button id="clicker" onclick="clicker()" value="0">
+                0
+            </button>
+
+
+
+    </div>
+    <div class="right">
+        <image class="image" id="image"></image>
+        <input onclick="gjett()">Start gjetting</input>
+
+    </div>
+
+
+
+</BODY>
+
+</HTML>

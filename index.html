@@ -1,9 +1,80 @@
-<!DOCTYPE html>
-<html>
+<!Doctype HTML>
+<HTML>
 
-<body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages</p>
-</body>
+<HEAD>
+    <TITLE>Rubens index</TITLE>
+    <link rel="stylesheet" href="Stilark/Stilark.css">
+    <script src="javascript/index.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="bilder/Seaweedbeard.png" />
+</HEAD>
 
-</html>
+<BODY onload="calls(); time(); user();" oncontextmenu="menu(event)">
+    <div class="header">
+        <h1><text id="headertext">Velkommen til Rubens index!</text></h1>
+        <div class="btngroup" id="btngroup1">
+
+            <button class="btn btn1" id="buttonformenu" onclick="btnreveal()">Sider
+				<img id="ddarrow" src="bilder/dropdownarrow.png">
+            </button>
+
+            <ul id="btngroup">
+                <li><a href="Mal.html">Mal</a></li>
+                <li><a href="jsfirst.html">JS test</a></li>
+                <li><a href="forfun/eightball/eightball.html">Interaktivitet</a></li>
+                <li><a href="forfun/vectors/vector.html">Vektor</a></li>
+                <li><a href="forfun/array/array.html">Spill</a></li>
+                <li><a href="forfun/todolist/todo.html">Huskeliste</a></li>
+                <li><a href="forfun/diagram/diagram.html">Tegning</a></li>
+                <li><a href="forfun/cases/cases.html">Cases</a></li>
+                <li><a href="forfun/clock/clock.html">Klokke</a></li>
+                <li><a href="forfun/spillv2/spillv2.html">Space Duel</a></li>
+                <li><a href="forfun/spillv2player/spillv2.html">Space Duel multiplayer</a></li>
+                <li><a href="forfun/troll/troll.html">Troll</a></li>
+                <li><a href="forfun/physics/physics.html">Fysikk (WIP)</a></li>
+                <li><a href="forfun/collatz/collatz.html">Collatz</a></li>
+                <li><a href="forfun/frogger/frogger.html">Frogger</a></li>
+                <li><a href="forfun/fighter/fighter.html">Street agressor</a></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="body">
+        <div class="innerbody">
+            <div id="dbc">
+                <a href="Prosjekter/prosjekt.html">Rubens prosjekter</a>
+            </div>
+
+            <div class="timecontainer" onmouseover="iin()" onmouseleave="iout()">
+                <div class="time" id="time">
+                    <span class="digital" id="digital" onclick="timeswitch()">00:00:00</span>
+                    <span class="analog" id="analog" style="display: none;" onclick="timeswitch()">
+                        <div class="clock" id="clock">
+                            <div class="dot"></div>
+                            <div class="seconds" id="seconds"></div>
+                            <div class="minutes" id="minutes"></div>
+                            <div class="hours" id="hours"></div>
+                        </div>
+                    </span>
+                </div>
+                <div class="info" id="info">
+                    <span id="city"></span>
+                    <br>
+                    <span id="weather"></span>
+                    <br>
+                    <span id="temp" onmouseover="tin()" onmouseleave="tout()"></span>
+                    <br>
+                    <span id="tempfeel"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rmbmenu" id="rmbmenu">
+        <ul>
+            <li><button onclick="userremove()">Reset navn</button></li>
+        </ul>
+    </div>
+
+</BODY>
+
+</HTML>
