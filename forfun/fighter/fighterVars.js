@@ -77,7 +77,7 @@ let canvas,
             kickspeed: 225,
             dead: false,
             facing: "right",
-            img: "../../Bilder/Sprite/characters/johannes.jpeg"
+            img: "../../Bilder/Sprite/characters/Johannes.jpeg"
         }
     },
     characters2 = {
